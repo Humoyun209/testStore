@@ -6,7 +6,7 @@ def test_check_login_and_register_links(browser):
     page = WelcomePage(browser, link)
     page.open()
     page.should_be_login_link()
-    page.should_be_login_register()
+    page.should_be_register_link()
 
 
 def test_go_to_login_from_welcome_page(browser):
@@ -14,4 +14,4 @@ def test_go_to_login_from_welcome_page(browser):
     page = WelcomePage(browser, link)
     page.open()
     page.go_to_register_on_mobile()
-    page.shoule_be_register_form()
+    page.should_be_register_link()

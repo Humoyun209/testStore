@@ -1,5 +1,7 @@
 from selenium.common.exceptions import NoSuchElementException
 
+from pages.locators import LoginPageLocators
+
 
 class BasePage:
     def __init__(self, browser, url, timeout=10):
