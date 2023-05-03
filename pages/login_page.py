@@ -4,7 +4,8 @@ from pages.locators import LoginPageLocators
 
 
 class LoginPage(BasePage):
-    def login_user_came_from_registration_page(self, username, password):
+
+    def login_user(self, username, password):
         self.browser.find_element(*LoginPageLocators.USERNAME).send_keys(username)
         self.browser.find_element(*LoginPageLocators.PASSWORD).send_keys(password)
 

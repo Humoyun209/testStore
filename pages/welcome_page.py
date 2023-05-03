@@ -21,7 +21,12 @@ class WelcomePage(BasePage):
         assert self.browser.find_element(*WelcomePageLocators.LOGIN_LINK), 'Log in link not found'
 
     def should_be_register_link(self):
-        assert self.browser.find_element(*WelcomePageLocators.LOGIN_LINK), 'Register link not found'
+        assert self.browser.find_element(*WelcomePageLocators.REGISTER_LINK), 'Register link not found'
 
     def should_be_register_form(self):
         assert self.browser.find_element(*RegisterPageLocators.REGISTER_FORM), 'Register link not found'
+
+    def go_to_profile(self):
+        self.browser.find_element(*WelcomePageLocators.HAMBURGER_BTN).click()
+        self.browser.find_element(*WelcomePageLocators.DROPDOWN_PROFILE).click()
+        self.browser.find_element(*WelcomePageLocators.PROFILE_LINK).click()

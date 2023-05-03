@@ -1,6 +1,5 @@
 from selenium.common.exceptions import NoSuchElementException
 
-from pages.locators import LoginPageLocators
 
 
 class BasePage:

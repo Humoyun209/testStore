@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
 
+from pages.base_page import BasePage
+
 
 class WelcomePageLocators:
     # on mobile
@@ -9,6 +11,7 @@ class WelcomePageLocators:
     LET_IS_GO_BTN = (By.CSS_SELECTOR, '.btn-lg')
     LOGIN_LINK = (By.CSS_SELECTOR, '.dropdown-menu li:last-child > a')
     REGISTER_LINK = (By.CSS_SELECTOR, '.dropdown-menu li:first-child > a')
+    PROFILE_LINK = (By.CSS_SELECTOR, '.dropdown-menu li:first-child .dropdown-item')
 
 
 class RegisterPageLocators:
@@ -34,3 +37,13 @@ class LoginPageLocators:
 class MainPageLocators:
     ADD_BASKET_BUTTON = (By.CSS_SELECTOR, '.col-xxl-4:nth-child(1) .btn')
     CATEGORIES = (By.CSS_SELECTOR, 'ul.list-group')
+    H1_PRODUCT = (By.CSS_SELECTOR, '.col-sm-8:first-child .card-title')
+
+
+class ProfilePageLocators(BasePage):
+    USERNAME = (By.CSS_SELECTOR, '#id_username')
+    EMAIL = (By.CSS_SELECTOR, '#id_email')
+    PROFILE_IMAGE = (By.CSS_SELECTOR, '#id_image')
+    CHANGE_BUTTON = (By.CSS_SELECTOR, '.btn-outline-primary')
+    HEADER_PRODUCT = (By.CSS_SELECTOR, '.d-flex h5.text-primary')
+    PLACE_ORDER_BUTTON = (By.CSS_SELECTOR, 'button.w-100')

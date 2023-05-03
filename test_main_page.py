@@ -1,13 +1,10 @@
-import time
-
 import pytest
 
 from pages.main_page import MainPage
-from pages.register_page import RegisterPage
 from pages.welcome_page import WelcomePage
 from test_login_page import test_login_an_existing_user
 
-@pytest.mark.regression
+
 def test_unauthorized_user_wants_to_add_the_good_to_the_basket(browser):
     page = MainPage(browser, 'http://80.249.147.135/home')
     page.open()
