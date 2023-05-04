@@ -11,7 +11,7 @@ class MainPage(BasePage):
         h1 = self.browser.find_element(*MainPageLocators.H1_PRODUCT).text
         button = self.browser.find_element(*MainPageLocators.ADD_BASKET_BUTTON)
         self.browser.execute_script("window.scrollBy(0, 500);")
-        time.sleep(5)
+        time.sleep(2)
         button.click()
         return h1
 

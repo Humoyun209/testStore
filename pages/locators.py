@@ -40,10 +40,36 @@ class MainPageLocators:
     H1_PRODUCT = (By.CSS_SELECTOR, '.col-sm-8:first-child .card-title')
 
 
-class ProfilePageLocators(BasePage):
+class ProfilePageLocators:
     USERNAME = (By.CSS_SELECTOR, '#id_username')
     EMAIL = (By.CSS_SELECTOR, '#id_email')
     PROFILE_IMAGE = (By.CSS_SELECTOR, '#id_image')
     CHANGE_BUTTON = (By.CSS_SELECTOR, '.btn-outline-primary')
     HEADER_PRODUCT = (By.CSS_SELECTOR, '.d-flex h5.text-primary')
     PLACE_ORDER_BUTTON = (By.CSS_SELECTOR, 'button.w-100')
+    IS_EMPTY = (By.CSS_SELECTOR, 'h3.mb-5')
+
+
+class OrderPageLocators:
+    NAME = (By.CSS_SELECTOR, '#id_first_name')
+    LASTNAME = (By.CSS_SELECTOR, '#id_last_name')
+    EMAIL = (By.CSS_SELECTOR, '#id_email')
+    ADDRESS = (By.CSS_SELECTOR, '#id_address')
+    ORDER_BUTTON = (By.CSS_SELECTOR, '.btn.w-100')
+    ORDER_PRODUCT_HEADER = (By.CSS_SELECTOR, 'h5.text-primary')
+
+
+class StripePageLocators:
+    EMAIL = (By.CSS_SELECTOR, '#email')
+    CARD = (By.CSS_SELECTOR, '#cardNumber')
+    DATA = (By.CSS_SELECTOR, '#cardExpiry')
+    CSV_CODE = (By.CSS_SELECTOR, '#cardCvc')
+    BILLING_NAME = (By.CSS_SELECTOR, '#billingName')
+    PAY_BUTTON = (By.CSS_SELECTOR, 'div.SubmitButton-IconContainer')
+    SUCCESS_HEADER = (By.CSS_SELECTOR, 'h4.text-center')
+
+    TEST_MAIL = 'h.ahmedov209@gmail.com'
+    TEST_CARD_NUMBER = '42' * 8
+    TEST_DATA = '1125'
+    TEST_CSV_CODE = '111'
+    TEST_FULL_NAME = 'Humoyun Ahmedov'

@@ -24,7 +24,10 @@ class ProfilePage(BasePage):
         header_text_on_profile = self.browser.find_element(*ProfilePageLocators.HEADER_PRODUCT).text
         assert header == header_text_on_profile, 'Продукт не тот продукт, который вы добавили.'
 
-
     def should_be_modified_username_in_the_field_username(self, email):
         new_email = self.browser.find_element(*ProfilePageLocators.EMAIL).get_attribute('value')
         assert new_email == email, 'Emails совпали'
+
+    def should_be_the_basket_is_empty_after_purchase(self):
+        txt = self.browser.find_element(*ProfilePageLocators.IS_EMPTY).text
+        assert txt == 'BASKET EMPTY', 'Webhook еще не включен'
