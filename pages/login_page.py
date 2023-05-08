@@ -1,6 +1,6 @@
 from pages.authorization import TestUser
 from pages.base_page import BasePage
-from pages.locators import LoginPageLocators
+from pages.locators import LoginPageLocators, BasePageLocators
 
 
 class LoginPage(BasePage):
@@ -12,5 +12,5 @@ class LoginPage(BasePage):
         self.browser.find_element(*LoginPageLocators.LOGIN_BUTTON).click()
 
     def should_be_alert_success_message_on_main_page(self):
-        message = self.browser.find_element(*LoginPageLocators.SUCCESS_ALERT_LOGIN)
+        message = self.browser.find_element(*BasePageLocators.SUCCESS_MESSAGE)
         assert message.text == 'Вы успешно авторизовались', 'Авторизация не завершена'

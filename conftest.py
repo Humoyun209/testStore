@@ -1,6 +1,9 @@
+import time
+
 import pytest
 from selenium import webdriver
 
+from pages.locators import MainPageLocators
 from pages.login_page import LoginPage
 
 
@@ -16,5 +19,3 @@ def browser():
     yield browser
     print('\n quit browser....')
     browser.quit()
-
-

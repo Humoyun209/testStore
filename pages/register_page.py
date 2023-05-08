@@ -1,9 +1,6 @@
-import random
-import time
-
 from pages.authorization import TestUser
 from pages.base_page import BasePage
-from pages.locators import RegisterPageLocators, LoginPageLocators
+from pages.locators import RegisterPageLocators, LoginPageLocators, BasePageLocators
 
 
 class RegisterPage(BasePage):
@@ -23,5 +20,5 @@ class RegisterPage(BasePage):
         assert self.browser.find_element(*LoginPageLocators.LOGIN_FORM), 'Регистрация не завершена'
 
     def should_be_alert_success_message_on_login_page(self):
-        message = self.browser.find_element(*RegisterPageLocators.SUCCESS_ALERT_REGISTER)
+        message = self.browser.find_element(*BasePageLocators.SUCCESS_MESSAGE)
         assert message.text == 'Вы успешно зарегистртровались', 'Регистрация не завершена'

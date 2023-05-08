@@ -1,7 +1,7 @@
 import time
 
 from pages.base_page import BasePage
-from pages.locators import MainPageLocators, LoginPageLocators, WelcomePageLocators
+from pages.locators import MainPageLocators, LoginPageLocators, WelcomePageLocators, BasePageLocators
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 
@@ -25,3 +25,12 @@ class MainPage(BasePage):
 
     def redirect_to_login_page_from_main_page_when_user_unauthorized(self):
         assert self.browser.find_element(*LoginPageLocators.LOGIN_FORM), 'Пользователь зарегистрирован'
+
+    def should_be_succes_message_on_main_page_about_new_product(self):
+        msg = self.browser.find_element(*BasePageLocators.SUCCESS_MESSAGE).text
+        assert msg == 'Вы успешно добавили товар в корзину', 'Товар не добавился в корзину'
+
+    def should_be_succes_message_on_main_page_about_exist_product(self):
+        msg = self.browser.find_element(*BasePageLocators.SUCCESS_MESSAGE).text
+        assert msg == 'Вы успешно увеличили кол-во товара', 'Кол-во товара не увеличился'
+

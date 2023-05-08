@@ -14,7 +14,7 @@ class StripePage(BasePage):
         self.browser.find_element(*StripePageLocators.CARD).send_keys(StripePageLocators.TEST_CARD_NUMBER)
         self.browser.find_element(*StripePageLocators.CSV_CODE).send_keys(StripePageLocators.TEST_CSV_CODE)
         self.browser.execute_script("window.scrollBy(0, 500);")
-        time.sleep(1)
+        self.browser.implicitly_wait(2)
         button = WebDriverWait(self.browser, 5).until(EC.element_to_be_clickable(
             StripePageLocators.PAY_BUTTON
         ))

@@ -1,7 +1,7 @@
 import time
 
 from pages.base_page import BasePage
-from pages.locators import ProfilePageLocators
+from pages.locators import ProfilePageLocators, MainPageLocators, BasePageLocators
 
 
 class ProfilePage(BasePage):
@@ -31,3 +31,15 @@ class ProfilePage(BasePage):
     def should_be_the_basket_is_empty_after_purchase(self):
         txt = self.browser.find_element(*ProfilePageLocators.IS_EMPTY).text
         assert txt == 'BASKET EMPTY', 'Webhook еще не включен'
+
+    def clear_basket(self):
+        clear_button = self.browser.find_element(*ProfilePageLocators.CLEAR_BUTTON)
+        clear_button.click()
+
+    def should_be_the_basket_is_empty_after_cleaning(self):
+        txt = self.browser.find_element(*ProfilePageLocators.IS_EMPTY).text
+        assert txt == 'BASKET EMPTY', 'Пользователь не смог удалить товар из корзины'
+
+    def should_be_success_message_after_cleaning(self):
+        msg = self.browser.find_element(*BasePageLocators.SUCCESS_MESSAGE).text
+        assert msg == 'Вы успешно почистили корзину', 'Корзина пусто'

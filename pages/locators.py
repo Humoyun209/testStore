@@ -3,6 +3,10 @@ from selenium.webdriver.common.by import By
 from pages.base_page import BasePage
 
 
+class BasePageLocators:
+    SUCCESS_MESSAGE = (By.CSS_SELECTOR, 'div.alert-success')
+
+
 class WelcomePageLocators:
     # on mobile
     HAMBURGER_BTN = (By.CSS_SELECTOR, 'button.navbar-toggler')
@@ -23,7 +27,7 @@ class RegisterPageLocators:
     PASSWORD1 = (By.NAME, 'password1')
     PASSWORD2 = (By.NAME, 'password2')
     REGISTER_BUTTON = (By.CSS_SELECTOR, 'button.form-control')
-    SUCCESS_ALERT_REGISTER = (By.CSS_SELECTOR, 'div.alert-success')
+
 
 
 class LoginPageLocators:
@@ -31,7 +35,6 @@ class LoginPageLocators:
     USERNAME = (By.NAME, 'username')
     PASSWORD = (By.NAME, 'password')
     LOGIN_BUTTON = (By.CSS_SELECTOR, '.btn.btn-primary.form-control')
-    SUCCESS_ALERT_LOGIN = (By.CSS_SELECTOR, 'div.alert-success')
 
 
 class MainPageLocators:
@@ -48,6 +51,7 @@ class ProfilePageLocators:
     HEADER_PRODUCT = (By.CSS_SELECTOR, '.d-flex h5.text-primary')
     PLACE_ORDER_BUTTON = (By.CSS_SELECTOR, 'button.w-100')
     IS_EMPTY = (By.CSS_SELECTOR, 'h3.mb-5')
+    CLEAR_BUTTON = (By.CSS_SELECTOR, '.btn-outline-danger')
 
 
 class OrderPageLocators:
