@@ -9,4 +9,5 @@
 
 ***Briefly about my E2E test:***
 
-*I tried to automate the process from user authorization to product purchase. Checked many processes, including the process of checking the user's shopping cart after purchase*
+*I tried to automate the process from user authorization to product purchase. Checked many processes, including the process of checking the user's shopping cart after purchase,
+the appearance of alerts and much more*
