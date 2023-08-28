@@ -6,7 +6,7 @@
 
 * Wrote unit tests
 * Tried to write E2E tests
-* 
-***Tried to write E2E tests***
 
-***I tried to automate the process from user authorization to product purchase. Checked many processes, including the process of checking the user's shopping cart after purchase***
+***Briefly about my E2E test:***
+
+*I tried to automate the process from user authorization to product purchase. Checked many processes, including the process of checking the user's shopping cart after purchase*
